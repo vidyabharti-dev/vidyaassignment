@@ -1,4 +1,4 @@
-## Running the Project
+# Running the Project
 
 Download the Zip code or git clone file name
 
