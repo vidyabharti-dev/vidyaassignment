@@ -1,0 +1,76 @@
+<div class="wrapper " *ngIf="this.isMobile == 'false'">
+  <div class="row g-0">
+    <div class="col-md-8 pageBorder">
+      <app-product-list [products]="productList"></app-product-list>
+    </div>
+
+    <div class="col-md-4 ">
+      <div class="clearfloat">
+        <div class="btn-group special">
+          <div *ngIf="cart?.totalItems >0 && cart.customerName!=null " class=" btn btn-grp">
+            <button mat-raised-button id="logout-button" (click)="newOrder()">New Order</button>
+          </div>
+          <div class="btn btn-grp">
+            <button mat-raised-button id="logout-button" *ngIf="cart?.totalItems >0 && cart?.customerName==null "
+              (click)="openModal()">Order Now</button>
+          </div>
+          <div *ngIf="cart?.totalItems >0 && cart.customerName!=null " class="btn btn-grp">
+            <button mat-raised-button id="logout-button" (click)="continuePayment()">Continue order for
+              {{cart.customerName}}</button>
+          </div>
+        </div>
+        <div class="clearfloat">
+          <app-shopping-cart></app-shopping-cart>
+        </div>
+
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+  
+<div *ngIf="this.isMobile == 'true'" >
+ 
+
+     <mat-accordion class="example-headers-align">
+      <div class="sticky btn-group special" *ngIf="cart?.totalItems >0" >{{cart?.totalItems }} <mat-icon (click)="panel1.open()" >shopping_cart</mat-icon> </div>
+
+      <mat-expansion-panel [expanded]="true">
+
+        <mat-expansion-panel-header  >
+          <mat-panel-title>
+            Menu
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-product-list [products]="productList"></app-product-list>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel #panel1 [hideToggle]="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+           Cart
+          </mat-panel-title>
+          <mat-panel-description>
+            <!-- <p><i class="material-icons md-24">payment</i></p> -->
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="btn-group special">
+          <div *ngIf="cart?.totalItems >0 && cart.customerName!=null " class=" btn btn-grp">
+            <button mat-raised-button id="logout-button" (click)="newOrder()">New Order</button>
+          </div>
+          <div class="btn btn-grp">
+            <button mat-raised-button id="logout-button" *ngIf="cart?.totalItems >0 && cart?.customerName==null "
+              (click)="openModal()">Order Now</button>
+          </div>
+          <div *ngIf="cart?.totalItems >0 && cart.customerName!=null " class="btn btn-grp">
+            <button mat-raised-button id="logout-button" (click)="continuePayment()">Continue order for
+              {{cart.customerName}}</button>
+          </div>
+        </div>
+        <div class="clearfloat">
+          <app-shopping-cart></app-shopping-cart>
+        </div>
+      </mat-expansion-panel>
+
+ </mat-accordion>
+</div>

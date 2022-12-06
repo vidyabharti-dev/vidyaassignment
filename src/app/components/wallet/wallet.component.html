@@ -1,0 +1,91 @@
+<div *ngIf="this.isMobile == 'false'">
+    <app-customer-search (customerSearch)="searchCustomer($event)" [showClearSearch]="true"></app-customer-search>
+
+  
+    <div class="payments row">
+        
+        <div class="col-md-6 pageBorder ">
+            <div class="wrapperPayment" *ngIf="this.customer != null">
+                <h2>Customer Name : {{this.customer}}</h2>
+                <h3>Wallet Balance : {{this.walletAmount}}</h3>
+                <h5>Total Payments : {{this.customerPayments}}</h5>
+                <h5>Total Orders Amount: {{this.customerOrderTotal}}</h5>
+            </div>
+            <app-payment-history [customer]="customer" (customerPayments)="setCustomerPayments($event)">
+            </app-payment-history>
+        </div>
+        <div class="col-md-6 pageBorder ">
+            <app-orders [customer]="this.customer" (customerOrderTotal)="setCustomerOrderTotal($event)"></app-orders>
+        </div>
+    </div>
+</div>
+
+
+
+<div *ngIf="this.isMobile == 'true'">
+    <mat-accordion class="example-headers-align">
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Customer Search
+                </mat-panel-title>
+                <mat-panel-description>
+                    <!-- <p><i class="material-icons md-24">shop</i></p> -->
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <app-customer-search (customerSearch)="searchCustomer($event)" [showClearSearch]="true">
+            </app-customer-search>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="true" *ngIf="this.customer != null">
+            <mat-expansion-panel-header >
+                <mat-panel-title>
+                    Wallet
+                </mat-panel-title>
+                <mat-panel-description>
+                    <!-- <p><i class="material-icons md-24">payment</i></p> -->
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="wrapperPayment">
+                <h2>Customer Name : {{this.customer}}</h2>
+                <h3>Wallet Balance : {{this.walletAmount}}</h3>
+                <h5>Total Payments : {{this.customerPayments}}</h5>
+                <h5>Total Orders Amount: {{this.customerOrderTotal}}</h5>
+
+            </div>
+
+        </mat-expansion-panel>
+        <mat-expansion-panel [expanded]="true" >
+            <mat-expansion-panel-header >
+                <mat-panel-title>
+                    Payments
+                </mat-panel-title>
+                <mat-panel-description>
+                    <!-- <p><i class="material-icons md-24">payment</i></p> -->
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <div class="col-md-6 pageBorder ">
+                <app-payment-history [customer]="customer" (customerPayments)="setCustomerPayments($event)">
+                </app-payment-history>
+            </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Past Orders
+                </mat-panel-title>
+                <mat-panel-description>
+                    <!-- <p><i class="material-icons md-24">reorder</i></p> -->
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="payments row">
+
+                <div class="col-md-6 pageBorder ">
+                    <app-orders [customer]="this.customer" (customerOrderTotal)="setCustomerOrderTotal($event)">
+                    </app-orders>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

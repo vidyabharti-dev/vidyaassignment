@@ -1,0 +1,45 @@
+    
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: beige !important;
+    color: #500d0d !important;
+}
+
+table th, table td {    
+    width: 52px;
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: row !important;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    color: #9920aa94;
+}
+
+
+.card {
+    position: relative;
+    display: flex;
+    /* flex-direction: column; */
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+
+
+.prodImagesmall{
+    width: 35%;
+    height: auto;
+
+}

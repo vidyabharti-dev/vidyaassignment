@@ -1,0 +1,15 @@
+<div class="btn-group special">
+    <form class="example-form ">
+        <mat-form-field appearance="fill">
+            <input matInput type="text" placeholder="Enter Customer" aria-label="Number"
+                [formControl]="searchCustControl" [matAutocomplete]="auto" style="font-size:large;" [(ngModel)]="option"
+                (ngModelChange)="onSubmit(option)" class="search-input">
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option" (click)="onSubmit(option)">
+                    {{option}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+          <button (click)="clearSearch()" *ngIf=showClearSearch type="button" class="search-btn">Clear</button>
+    </form>
+</div>

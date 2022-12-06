@@ -1,0 +1,54 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+img{
+    z-index: 12;
+}
+
+.drinkname{
+    text-overflow:ellipsis;
+    overflow: hidden;
+    
+}
+.card{
+    color: #878787;
+    padding: 7px !important;
+    text-transform: capitalize;
+}
+.inputQty {
+    font-weight: 500;
+    border-radius: 0;
+    border-radius: 0.2rem;
+    width: 25px;
+    text-align: center;
+    font-size: 10px;
+}
+.btnSize{
+    padding:0px !important;
+
+}
+.img-card{
+display: flex;
+padding-top: 2px;
+}
+
+.clearflex {
+ display: block;
+    clear: left;
+  }
+  .amount{
+    
+        margin: 0;
+      
+  }
+
+.box_body {
+  text-align: left;
+  overflow: hidden;
+}

@@ -1,0 +1,86 @@
+<div class="wrapperPayment"  *ngIf="this.isMobile == 'false'">
+  <div>
+    <div class="row ">
+      <div class="col-md-4 paymentspageborder">
+        <h2>Customer Name : {{this.customer}}</h2>
+        <h3>Wallet Balance : {{this.walletAmount|currency:'EUR'}}</h3>
+        <h5>Total Payments : {{this.customerPayments|currency:'EUR'}}</h5>
+        <h5>Total Orders Amount: {{this.customerOrderTotal|currency:'EUR'}}</h5>
+        <app-payment-history [customer]="customer" (customerPayments)="setCustomerPayments($event)">
+        </app-payment-history>
+      </div>
+      <div class="col-md-4 paymentspageborder">
+        <app-shopping-cart>
+        </app-shopping-cart>
+        <form class="text-right">
+          <div class="btn-group btn-group-lg ">
+            <input type="number" placeholder="enter amount paid" aria-label="Number" matInput type="number"
+              value="{{currentPayment}}" class="inputQty" #currentPayment>
+
+            <button mat-raised-button id="modal-action-button" (click)="placeOrder(currentPayment.value)"
+              [disabled]="cart?.totalItems<1">Finish Order</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-4 paymentspageborder">
+        <app-orders [customer]="customer" (customerOrderTotal)="setCustomerOrderTotal($event)"></app-orders>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile View -->
+
+<div *ngIf="this.isMobile == 'true'">
+  <mat-accordion class="example-headers-align" >
+    <mat-expansion-panel   [expanded]="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Cart
+        </mat-panel-title>
+        <mat-panel-description>
+          <!-- <p><i class="material-icons md-24">shop</i></p> -->
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <app-shopping-cart>
+      </app-shopping-cart>
+      <div class="btn-group btn-group-lg ">
+        <input type="number" placeholder="enter amount paid" aria-label="Number" matInput type="number"
+          value="{{currentPayment}}" class="inputQty" #currentPayment>
+        <button mat-raised-button id="modal-action-button" (click)="placeOrder(currentPayment.value)"
+          [disabled]="cart?.totalItems<1">Finish Order</button>
+      </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Past Payments
+        </mat-panel-title>
+        <mat-panel-description>
+          <!-- <p><i class="material-icons md-24">payment</i></p> -->
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <h2>Customer Name : {{this.customer}}</h2>
+      <h3>Wallet Balance : {{this.walletAmount|currency:'EUR'}}</h3>
+      <h5>Total Payments : {{this.customerPayments|currency:'EUR'}}</h5>
+      <h5>Total Orders Amount: {{this.customerOrderTotal|currency:'EUR'}}</h5>
+      <app-payment-history [customer]="customer" (customerPayments)="setCustomerPayments($event)">
+      </app-payment-history>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Past Orders
+        </mat-panel-title>
+        <mat-panel-description>
+          <!-- <p><i class="material-icons md-24">reorder</i></p> -->
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <app-orders [customer]="customer" (customerOrderTotal)="setCustomerOrderTotal($event)"></app-orders>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

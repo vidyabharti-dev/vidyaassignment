@@ -1,0 +1,23 @@
+<div class="wrapper">
+    <div class="card">
+        <div class="container">
+            <div class="title__section">
+                <div class="title">
+                    <h2>{{product.drink_name}}</h2>
+                </div>
+            </div>
+            <div class="display__product">
+                <img src="assets/images/productsimg/{{product.drink_name}}.png" alt="">
+            </div>
+            <div class="">
+                <div class="btn-group special" role="group" aria-label="...">
+                    <button type="button" class="btn btn-default" (click)="addProductToCart(product,option)"
+                        *ngFor="let option of product.options">
+                        {{option.variant}}<br>
+                        {{option.price|currency:'EUR'}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

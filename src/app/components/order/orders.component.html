@@ -1,0 +1,30 @@
+<h2 class="text-center">Orders</h2>
+<table class="paymentspage">
+    <tbody>
+        <th *ngFor="let col of columns">
+            <h4 >
+                {{col.title}}
+            </h4></th>
+    </tbody>
+    <tbody>
+        <tr *ngFor="let order of filteredOrderResult">
+            <td *ngFor="let col of columns">
+                <div *ngIf="col.data=='image'; else rdOnly">
+                    <img class="prodImagesmall" src="assets/images/productsimg/{{order.drink}}.png">
+                </div>
+                <ng-template #rdOnly>
+                    <div  >
+                        {{getData(order, col.data)}}
+                    </div>
+                   
+                </ng-template>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<!-- *ngIf="this.customer == null ||  col.data != 'user' -->
+
+
+

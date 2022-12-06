@@ -1,0 +1,48 @@
+/* Make the modal a three-row grid */
+#modal-content-wrapper {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    padding: 20px;
+   background-color: #ddd0c8;
+}
+
+#modal-title {
+    font-size: 22px;
+}
+
+#modal-footer {
+    justify-self: right;
+    align-self: center;}
+
+#modal-action-button {
+}
+
+#modal-cancel-button {
+  margin-right: 17px;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 600px;
+    width: 100%;
+  
+  }
+  
+
+mat-form-field label {
+    font-size: x-large !important;
+  }
+  ::ng-deep .mat-input-wrapper{
+    width:400px !important;
+  }
+
+  .mat-input-element{
+    color:#323232 !important;
+  }
+
+  .mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: #6d454d !important;
+}
+
+

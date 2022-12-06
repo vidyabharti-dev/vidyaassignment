@@ -1,0 +1,41 @@
+.clearfloat {
+  padding: 10px;
+  clear: left;
+}
+
+.wrapper {
+  padding: 45px;
+}
+
+
+.btn-group.special {
+  display: flex;
+}
+
+.special .btn {
+  flex: 1;
+  border: 0.5px solid #ddd0c8;
+  color: white;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+.pageBorder {
+  border-right: 2px solid #6D454D;
+}
+
+.sticky {
+  position: sticky;
+  //z-index: 5;
+  top: 30px;
+  color:#6D454D;
+  font-size:large;
+  padding:20px;
+  float:right ;
+  cursor:pointer;
+}
+
+.mat-icon {
+
+color:#6D454D;
+}

@@ -1,0 +1,26 @@
+<div class="paymentsheader">
+    <h2 class="text-center">Payments</h2>
+    <table>
+        <tbody>
+            <th *ngFor="let col of columns">
+                <h4 >{{col.title}}</h4>
+            </th>
+        </tbody>
+        <tbody>
+            <tr *ngFor="let payment of filteredPayments">
+                <td *ngFor="let col of columns">
+                    <div >
+                        {{getData(payment, col.data)}}
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+<!-- *ngIf="this.customer == null ||  col.title != 'Customer' "
+*ngIf="this.customer == null ||  col.data != 'user' " -->
+

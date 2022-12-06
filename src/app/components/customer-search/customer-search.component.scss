@@ -1,0 +1,136 @@
+/* Make the modal a three-row grid */
+#modal-content-wrapper {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  padding: 20px;
+  background-color: #cecab5;
+}
+
+#modal-title {
+  font-size: 22px;
+}
+
+#modal-footer {
+  justify-self: right;
+  align-self: center;
+}
+
+#modal-action-button {
+  margin-right: 30px;
+  background-color: #3b3b3b;
+}
+
+#modal-cancel-button {
+  background-color: #4e4e4e;
+}
+
+.example-full-width {
+
+  width: 100%;
+}
+
+mat-form-field label {
+  font-size: x-large !important;
+}
+
+mat-form-field {
+  width: 200px !important;
+}
+
+::ng-deep .mat-input-wrapper {
+  width: 500px !important;
+ 
+}
+.example-form{
+padding: 10px;
+
+}
+
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.search-box {
+  position: absolute;
+  height: 60px;
+  background: #353535;
+  line-height: 40px;
+  padding: 10px;
+  border-radius: 60px;
+ 
+}
+
+.search-input {
+  background: #d9d7d7;
+  color: #6d454d;
+  outline: none;
+  border: none;
+  line-height: 30px;
+  width: 150px;
+  float: left;
+  font-size: 14px;
+  transition: 0.7s ease;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #6d454d;
+  opacity: 1;
+  /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #6d454d;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #6d454d;
+}
+
+.search-btn {
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background: #353535;
+  line-height: 20px;
+  padding: 12px;
+  border-radius: 100%;
+  float: right;
+  font-size: medium;
+  color: white;
+}
+
+.search-box:hover>.search-input {
+  width: 450px;
+}
+
+.search-box:hover>.search-input a {
+  width: 450px;
+}
+
+.search-input:focus {
+  width: 450px;
+}
+
+.search-box:hover>.search-btn {
+  background: #fff;
+}
+
+.search-input:focus+.search-btn {
+  background: #fff;
+}
+
+
+
+.mat-form-field-infix {
+
+  width: 236px !important;
+}
+

@@ -1,0 +1,17 @@
+<div id="modal-content-wrapper">
+    <section id="modal-body">
+        <div class="modal-body">
+        <app-customer-search (customerSearch) = "onSubmit($event)" [showClearSearch] = "false" ></app-customer-search>
+        </div>
+    </section>
+    <div class="btn-group special">
+    <button mat-raised-button id="modal-cancel-button" (click)="closeModal()" class="btn">back</button>
+    <button mat-raised-button id="modal-action-button" (click)="continueSubmit()" class="btn">Continue</button>
+    </div>
+</div> 
+
+
+
+
+
+
