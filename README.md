@@ -4,7 +4,7 @@ Download the Zip code or git clone file name
 
 Frontend (Part)
 
-1.1 navigate to folder/directory- barista
+1.1 navigate to folder/directory- vidyaassignment-main
 
 # install dependencies
 	$ npm install
